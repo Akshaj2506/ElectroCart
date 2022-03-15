@@ -4,7 +4,7 @@ const DB_USER = process.env.DB_USER
 const DB_PASSWORD = process.env.DB_PASSWORD
 const DB_DATABASE = process.env.DB_DATABASE
 const DB_PORT = process.env.DB_PORT
-Hello Nishna
+
 const express = require("express")
 const app = express()
 const mysql = require("mysql")
@@ -20,7 +20,7 @@ db.getConnection( (err, connection)=> {
    if (err) throw (err)
    console.log ("DB connected successful: " + connection.threadId)
 })
-hi bye
+
 const port = process.env.PORT
 
 app.listen(port,
