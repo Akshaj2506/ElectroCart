@@ -70,7 +70,7 @@ app.post("/createUser",async (req,res) => {
                console.log(result.insertId)
                res.sendStatus(201)
             })
-         }hello
+         }
       })
    })
 })
