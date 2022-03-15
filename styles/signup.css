@@ -1,0 +1,84 @@
+@font-face {
+   font-family: Montserrat;
+   src: url(C:\xampp\htdocs\SemIVProjectWeb\fonts\Montserrat-VariableFont_wght.ttf);
+}
+:root {
+   --producer-primary: #F97432;
+   --consumer-primary: #40e0d0;
+}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Montserrat;
+}
+body {
+   background-color: #202124;
+}
+main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+#container {
+   background: white;
+   padding: 50px;
+   width: fit-content;
+   border-radius: 30px;
+   box-shadow: 3px 6px #aaa;
+   display: flex;
+}
+input[type="text"],input[type="password"],input[type="telephone"] {
+   font-size: 24px;
+   margin-bottom: 10px;
+   border: 1px solid #aaa;
+}
+#login-div > form, #register-div > form {
+   margin-top: 20px;
+}
+#register-div > form {
+   padding-right: 0;
+}
+#login-div {
+   height: fit-content;
+}
+#links {
+   width: fit-content;
+   margin: 0 auto;
+   margin-top: 30px;
+}
+#links > button {
+   padding: 10px 25px;
+}
+#links > button[type="submit"], #links > button[type="submit"] {
+   border: 1px solid #ddd;
+   border-radius: 25px;
+   color: black;
+   transition: all 0.3s ease-in-out;
+   text-decoration: none;
+   cursor: pointer;
+}
+#links > button[type="submit"]:hover {
+   box-shadow: 2px 2px #ddd;
+   background: var(--producer-primary);
+   border: 1px solid #aaa
+}
+#links > button[onmousedown="location.href='consumers_index.php'"]:hover {
+   box-shadow: 2px 2px #ddd;
+   background: var(--consumer-primary);
+}
+#register-div {
+   margin-left: 20px;
+   border-left: 1px solid #ddd;
+   padding-left: 20px;
+}
+#register-div > form > button {
+   padding: 15px 20px;
+   width: 100%;
+   border: none;
+   font-weight: bold;
+   font-size: 20px;
+   color: white;
+   background-color: rgb(0, 122, 255);
+}
