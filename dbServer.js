@@ -20,7 +20,7 @@ db.getConnection( (err, connection)=> {
    if (err) throw (err)
    console.log ("DB connected successful: " + connection.threadId)
 })
-
+hi bye
 const port = process.env.PORT
 
 app.listen(port,
