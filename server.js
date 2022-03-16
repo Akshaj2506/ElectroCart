@@ -33,3 +33,11 @@ app.use(session({
    saveUninitialized: true,
    cookie: {maxAge: 60000}
 }))
+
+app.use(flash());
+app.get('/', function(req, res, next) {
+   res.render('signup', {
+       title: 'SignUp'
+   });
+});
+
