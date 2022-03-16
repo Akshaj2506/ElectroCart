@@ -29,7 +29,9 @@ app.listen(port,
 const bcrypt = require("bcrypt")
 
 app.use(express.json())
-
+app.get('/',function(req, res, next) {
+   res.render('signup.php',{title: 'Sign Up/Register'})
+})
 app.post("/createUser",async (req,res) => {
    const firstName = req.body.fname;
    const lastName = req.body.lname;
