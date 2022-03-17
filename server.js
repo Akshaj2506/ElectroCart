@@ -41,4 +41,10 @@ app.get('/', function(req, res, next) {
    });
 });
 
-app.post('/',function(req, res, next))
+app.post('/',function(req, res, next)) {
+   var f_name = req.body.regsiterfname;
+   var l_name = req.body.regsiterlname;
+   var phoneNum = req.body.phnum;
+   var userId = req.body.userid;
+   var password = req.body.userpass;
+}
