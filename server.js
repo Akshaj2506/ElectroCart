@@ -47,4 +47,19 @@ app.post('/',function(req, res, next)) {
    var phoneNum = req.body.phnum;
    var userId = req.body.userid;
    var password = req.body.userpass;
+   const hashedPassword = await bcrypt.hash(password,10);
+
+   var sql = `INSERT INTO users (
+      first_name, last_name, user_id, password, phone_no
+      ) VALUES (
+         "${f_name}",
+         "${l_name}",
+         "${userId}",
+         "${hashedPassword}"
+         "${phoneNum}",
+         )`;
+   db.query(sql, function(err, result) {
+      if (err) throw err;
+      console.log('record inserted')
+   })
 }
