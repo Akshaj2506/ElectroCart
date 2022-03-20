@@ -41,9 +41,9 @@ app.get('/', function(req, res, next) {
    });
 });
 
-app.post('/',function(req, res, next)) {
-   var f_name = req.body.regsiterfname;
-   var l_name = req.body.regsiterlname;
+app.post('/',function(req, res, next) {
+   var f_name = req.body.registerfname;
+   var l_name = req.body.registerlname;
    var phoneNum = req.body.phnum;
    var userId = req.body.userid;
    var password = req.body.userpass;
@@ -60,6 +60,24 @@ app.post('/',function(req, res, next)) {
          )`;
    db.query(sql, function(err, result) {
       if (err) throw err;
-      console.log('record inserted')
-   })
-}
+      console.log('record inserted');
+      req.flash('success','User Added Successfully!');
+      res.redirect('/');
+   });
+});
+app.use(function(req, res, next) {
+   next(createError(404));
+});
+app.use(function (err, req, res, next) {
+   res.locals.message = err.message;
+   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+   res.status(err.status || 500);
+   res.render('error');
+});
+
+app.listen(3000, function() {
+   console.log('Node app is running on port 3000');
+});
+
+module.exports = app;
