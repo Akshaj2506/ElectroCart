@@ -3,8 +3,8 @@
    src: url(C:\xampp\htdocs\SemIVProjectWeb\fonts\Montserrat-VariableFont_wght.ttf);
 }
 :root {
-   --producer-primary: #F97432;
-   --consumer-primary: #40e0d0;
+   --producer-primary: linear-gradient(to top, #fe6e84,#fea86e);
+   --consumer-primary: linear-gradient(to bottom, #17ffc6,#0370b8);
 }
 * {
    margin: 0;
@@ -13,7 +13,7 @@
    font-family: Montserrat;
 }
 body {
-   background-color: #202124;
+   background-color: #171624;
 }
 main {
    display: flex;
