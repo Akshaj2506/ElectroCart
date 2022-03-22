@@ -32,5 +32,22 @@ exports.register =  (req, res) => {
       }
       let hashedPassword = await bcrypt.hash(password, 10);
       console.log(hashedPassword);
+
+      db.query("INSERT INTO users SET ?", {
+         first_name: firstName,
+         last_name: lastName, 
+         user_id: userId, 
+         password: hashedPassword,
+         phone_no: phone
+      }, (error, results) => {
+         if (error) {
+            console.log(error);
+         } else {
+            console.log(results);
+            return res.render('index', {
+               success_message: 'User registered'
+            })
+         }
+      });
    });
 }

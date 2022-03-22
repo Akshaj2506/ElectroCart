@@ -65,7 +65,7 @@ input[type="text"],input[type="password"],input[type="telephone"] {
    border: 1px solid #aaa
 }
 #links > button[onmousedown="location.href='consumers_index.php'"]:hover {
-   box-shadow: 2px 2px #ddd;
+   box-shadow: 2px 2px 5px #ddd;
    background: var(--consumer-primary);
 }
 #register-div {
@@ -84,4 +84,7 @@ input[type="text"],input[type="password"],input[type="telephone"] {
 }
 #error-message {
    color: red;
+}
+#success-message {
+   color: rgb(39, 175, 39);
 }
