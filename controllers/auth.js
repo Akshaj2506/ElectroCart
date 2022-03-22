@@ -51,3 +51,31 @@ exports.register =  (req, res) => {
       });
    });
 }
+
+exports.login = (req, res) => {
+   console.log(req.body);
+   const userId = req.body.userid;
+   const password = req.body.userpass;
+
+   db.query( 'SELECT * FROM users where user_id = ?',userId, async(error, result) => {
+      if(error) {
+         console.log(error);
+      } else {
+         if (result.length == 0) {
+            return res.render('index', {
+               login_message: 'User not found'
+            })
+         } else {
+            const hashedPassword = result[0].password;
+
+            if (await bcrypt.compare(password, hashedPassword)) {
+               res.send(`${userId} is logged in!`);
+            } else {
+               return res.render('index', {
+                  login_message: 'Password is incorrect'
+               })
+            }
+         }
+      }
+   })
+}

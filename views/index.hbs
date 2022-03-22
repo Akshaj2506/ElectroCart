@@ -11,17 +11,20 @@
       <div id="container">
          <div id="login-div">
             <h1>Log In</h1>
-            <form>
+            <form action="/auth/login" method="POST">
                <label for="userid">Account ID: </label><br>
                <input type="text" required name="userid" id="user-id"><br>
                <label for="userpass">Password:</label><br>
                <input type="password" required name="userpass" id="user-pass"><br>
                <span>Sign in as a</span><br>
                <div id="links">
-                  <button type="submit" onmousedown="location.href = 'producers_index.php'">Producer</button>
-                  <button type="submit" onmousedown="location.href='consumers_index.php'">Consumer</button>
+                  <button type="submit" id="producer">Producer</button>
+                  <button type="submit" id="consumer">Consumer</button>
                </div>
             </form>
+            {{#if login_message }}
+               <h4 class="error-message">{{login_message}}</h4>
+            {{/if}}
          </div>
          <div id="register-div">
             <h1>Register</h1>
@@ -41,7 +44,7 @@
                <button type="submit">Submit</button>
             </form>
             {{#if message }}
-               <h4 id="error-message">{{message}}</h4>
+               <h4 class="error-message">{{message}}</h4>
             {{/if}}
             {{#if success_message }}
                <h4 id="success-message">{{success_message}}</h4>
