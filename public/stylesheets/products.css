@@ -1,7 +1,12 @@
+@font-face {
+   font-family: Montserrat;
+   src: url(C:\xampp\htdocs\SemIVProjectWeb\fonts\Montserrat-VariableFont_wght.ttf);
+}
 * {
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   font-family: Montserrat;
 }
 body {
    background: #171624;
@@ -21,9 +26,14 @@ nav {
 }
 .nav-links ul li{
    list-style: none;
-   padding: 50px 20px;
-   margin-right: 20px;
+   padding: 20px 0px;
+   margin-top: 20px;
+   margin-right: 10px;
 }
+.nav-links ul li:nth-child(5) {
+   padding: 10px;
+}
+
 li> a:link {
   text-decoration: none;
 }
@@ -33,13 +43,30 @@ li> a:visited {
   color: #fff;
 }
 
-li> a {
+li a {
   color:#fff;
+  padding: 10px;
+  background: none;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  display: flex;
 }
-
-li > a:hover {
-   background-color: linear-gradient(to bottom, #17ffc6,#0370b8);
+#account {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#account:hover {
+   background: none;
+   filter:opacity(0.5);
+   color: white;
+}
+li a:hover {
+   transition: all 0.2s ease-in-out;
+   background: linear-gradient(to bottom, #17ffc6,#0370b8);
+   color: black;
 }
 li a img {
    height: 36px;
+   margin-right: 5px;
 }

@@ -11,11 +11,11 @@
       <div id="container">
          <div id="login-div">
             <h1>Log In</h1>
-            <form action="/auth/login" method="POST">
+            <form action="/auth/login" method="POST" autocomplete="off">
                <label for="userid">Account ID: </label><br>
-               <input type="text" required name="userid" id="user-id"><br>
+               <input type="text" required name="userid" id="user-id" autocomplete="off"><br>
                <label for="userpass">Password:</label><br>
-               <input type="password" required name="userpass" id="user-pass"><br>
+               <input type="password" required name="userpass" id="user-pass" autocomplete="off"><br>
                <span>Sign in as a</span><br>
                <div id="links">
                   <button type="submit" id="producer">Producer</button>
@@ -28,7 +28,7 @@
          </div>
          <div id="register-div">
             <h1>Register</h1>
-            <form action="/auth/register" method="POST">
+            <form action="/auth/register" method="POST" autocomplete="off">
                <label for="registerfname">First Name: </label><br>
                <input type="text" required name="registerfname" id="register-fname" autocomplete="off"><br>
                <label for="registerlname">Last Name: </label><br>
