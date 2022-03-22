@@ -69,7 +69,9 @@ exports.login = (req, res) => {
             const hashedPassword = result[0].password;
 
             if (await bcrypt.compare(password, hashedPassword)) {
-               res.send(`${userId} is logged in!`);
+               return res.render('products', {
+                  accountName: `${result[0].first_name}`
+               })
             } else {
                return res.render('index', {
                   login_message: 'Password is incorrect'
