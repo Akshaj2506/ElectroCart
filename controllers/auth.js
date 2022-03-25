@@ -32,7 +32,7 @@ exports.register =  (req, res) => {
       }
       let hashedPassword = await bcrypt.hash(password, 10);
       console.log(hashedPassword);
-
+      
       db.query("INSERT INTO users SET ?", {
          first_name: firstName,
          last_name: lastName, 
@@ -66,6 +66,7 @@ exports.login = (req, res) => {
                login_message: 'User not found'
             })
          } else {
+            console.log(result);
             const hashedPassword = result[0].password;
 
             if (await bcrypt.compare(password, hashedPassword)) {
