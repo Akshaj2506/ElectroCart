@@ -82,3 +82,7 @@ exports.login = (req, res) => {
       }
    })
 }
+exports.addProduct = (req, res) => {
+   console.log(req.body);
+   
+}
