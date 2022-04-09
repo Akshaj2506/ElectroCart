@@ -2,134 +2,155 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" href="/stylesheets/addProduct.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Add Product</title>
 </head>
 <body>
-   <form action="/auth/addProduct" id="motherboard">
-      <h3>Enter Motherboard details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="cpu-support" placeholder="CPU Support" id=""><br>
-      <input type="text" name="socket" placeholder="Socket" id=""><br>
-      <input type="text" name="storage" placeholder="Storage" id=""><br>
-      <input type="text" name="network" placeholder="Network" id=""><br>
-      <input type="number" name="price" placeholder="Price" id=""><br>
-      <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
-      <button type="submit">Add Product</button>
-   </form>
-   <form action="/auth/addProduct" id="cpu">
-      <h3>Enter CPU details: </h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="number" name="core-number" placeholder="No. of cores" id=""><br>
-      <input type="number" name="threads-number" placeholder="No. of threads" id=""><br>
-      <input type="number" name="clock-speed" placeholder="Clock Speed" id=""><br>
-      <input type="text" name="cache-amount" placeholder="Amount of Cache" id=""><br>
-      <input type="number" name="price" placeholder="Price" id=""><br>
-      <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
-      <button type="submit">Add Product</button>
-   </form>
-   <form action="/auth/addProduct" id="storage">
-      <h3>Enter Storage device details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="form-factor" placeholder="Form Factor" id=""><br>
-      <input type="text" name="dimensions" placeholder="Dimensions" id=""><br>
-      <input type="text" name="capacity" placeholder="Capacity" id=""><br>
-      <input type="number" name="speed" placeholder="Speed" id=""><br>
-      <input type="number" name="price" placeholder="Price" id=""><br>
-      <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="ram">
-      <h3>Enter RAM details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="frequency" placeholder="Frequency" id=""><br>
-      <input type="text" name="voltage" placeholder="Voltage" id=""><br>
-      <input type="text" name="ram-amount" placeholder="Amount of RAM" id=""><br>
-      <select name="bit-category" id="">
-         <option value="" disabled selected hidden>Select Bits (32/64)</option>
-         <option value="32 bit">32 bit</option>
-         <option value="64 bit">64 bit</option>
-      </select><br>
-      <input type="number" name="price" placeholder="Price" id=""><br>
-      <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="cable">
-      <h3>Enter Cable Details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="cable-category" placeholder="Category" id=""><br>
-      <select name="shield-info" id="">
-         <option value="" disabled selected hidden>Shielded/Non-Shielded</option>
-         <option value="Shielded">Shielded</option>
-         <option value="Non-shielded">Non-shielded</option>
-      </select><br>
-      <input type="number" name="length" placeholder="Length" id=""><br>
-      <select name="material" id="">
-         <option value="" disabled selected hidden>Select Material</option>
-         <option value="Solid">Solid</option>
-         <option value="Stranded">Stranded</option>
-      </select><br>
-      <input type="number" name="price" id="" placeholder="Price"><br>
-      <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="laptop">
-      <h3>Enter Laptop details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" id="ram-storage" placeholder="RAM/Storage"><br>
-      <input type="text" name="screen-size" placeholder="Screen size" id=""><br>
-      <input type="text" name="processor" placeholder="Processor" id=""><br>
-      <input type="text" name="resolution" placeholder="Resolution"><br>
-      <input type="text" name="operating-system" placeholder="Operating System"><br>
-      <input type="number" name="price" id="" placeholder="Price"><br>
-      <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="phone">
-      <h3>Enter Mobile Phone details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="processor" placeholder="Processor" id=""><br>
-      <input type="text" name="camera" placeholder="Camera" id=""><br>
-      <input type="text" id="ram-storage" placeholder="RAM/Storage"><br>
-      <input type="text" name="screen-size" placeholder="Screen size" id=""><br>
-      <input type="text" name="resolution" placeholder="Resolution"><br>
-      <input type="number" name="price" id="" placeholder="Price"><br>
-      <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="headphones">
-      <h3>Enter Headphones details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="driver" placeholder="Driver" id=""><br>
-      <input type="text" name="type" placeholder="Type" id=""><br>
-      <input type="text" name="sensitivity" placeholder="Sensitivity" id=""><br>
-      <input type="text" name="impedance" placeholder="Impedance" id=""><br>
-      <input type="text" name="frequency" placeholder="Frequency" id=""><br>
-      <input type="number" name="price" id="" placeholder="Price"><br>
-      <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="camera">
-      <h3>Enter camera details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="type" placeholder="Type" id=""><br>
-      <input type="text" name="performance" placeholder="Performance" id=""><br>
-      <input type="text" name="storage" placeholder="Storage" id=""><br>
-      <input type="text" name="video" placeholder="Video" id=""><br>
-      <input type="number" name="price" id="" placeholder="Price"><br>
-      <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
-      <button type="submit">Add Product</button><br>
-   </form>
-   <form action="/auth/addProduct" id="tv">
-      <h3>Enter TV details:</h3>
-      <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
-      <input type="text" name="display-type" placeholder="Display Type" id=""><br>
-      <input type="text" name="screen-size" placeholder="Screen Size" id=""><br>
-      <input type="text" name="resolution" placeholder="Screen Resolution"><br>
-      <input type="number" name="refresh-rate" placeholder="Refresh Rate" id=""><br>
-      <input type="number" name="price" id="" placeholder="Price"><br>
-      <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
-      <button type="submit">Add Product</button><br>
-   </form>
+   <main>
+      <form action="/auth/FetchTable">
+         <h3>Which product is to be added?</h3>
+         <select name="fetchTable" id="">
+            <option value="" disabled selected hidden>Select Product</option>
+            <option value="motherboard">Motherboard</option>
+            <option value="cpu">CPU</option>
+            <option value="storage">Storage</option>
+            <option value="ram">RAM</option>
+            <option value="cable">Cable</option>
+            <option value="laptop">Laptop</option>
+            <option value="mobile">Mobile Phone</option>
+            <option value="headphones">Headphones</option>
+            <option value="cameras">Camera</option>
+            <option value="televisions">Television</option>
+         </select>
+         <button type="submit">Submit</button>
+      </form>
+      <form action="/auth/addProduct" id="motherboard">
+         <h3>Enter Motherboard details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="cpu-support" placeholder="CPU Support" id=""><br>
+         <input type="text" name="socket" placeholder="Socket" id=""><br>
+         <input type="text" name="storage" placeholder="Storage" id=""><br>
+         <input type="text" name="network" placeholder="Network" id=""><br>
+         <input type="number" name="price" placeholder="Price" id=""><br>
+         <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
+         <button type="submit">Add Product</button>
+      </form>
+      <form action="/auth/addProduct" id="cpu">
+         <h3>Enter CPU details: </h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="number" name="core-number" placeholder="No. of cores" id=""><br>
+         <input type="number" name="threads-number" placeholder="No. of threads" id=""><br>
+         <input type="number" name="clock-speed" placeholder="Clock Speed" id=""><br>
+         <input type="text" name="cache-amount" placeholder="Amount of Cache" id=""><br>
+         <input type="number" name="price" placeholder="Price" id=""><br>
+         <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
+         <button type="submit">Add Product</button>
+      </form>
+      <form action="/auth/addProduct" id="storage">
+         <h3>Enter Storage device details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="form-factor" placeholder="Form Factor" id=""><br>
+         <input type="text" name="dimensions" placeholder="Dimensions" id=""><br>
+         <input type="text" name="capacity" placeholder="Capacity" id=""><br>
+         <input type="number" name="speed" placeholder="Speed" id=""><br>
+         <input type="number" name="price" placeholder="Price" id=""><br>
+         <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="ram">
+         <h3>Enter RAM details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="frequency" placeholder="Frequency" id=""><br>
+         <input type="text" name="voltage" placeholder="Voltage" id=""><br>
+         <input type="text" name="ram-amount" placeholder="Amount of RAM" id=""><br>
+         <select name="bit-category" id="">
+            <option value="" disabled selected hidden>Select Bits (32/64)</option>
+            <option value="32 bit">32 bit</option>
+            <option value="64 bit">64 bit</option>
+         </select><br>
+         <input type="number" name="price" placeholder="Price" id=""><br>
+         <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="cable">
+         <h3>Enter Cable Details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="cable-category" placeholder="Category" id=""><br>
+         <select name="shield-info" id="">
+            <option value="" disabled selected hidden>Shielded/Non-Shielded</option>
+            <option value="Shielded">Shielded</option>
+            <option value="Non-shielded">Non-shielded</option>
+         </select><br>
+         <input type="number" name="length" placeholder="Length" id=""><br>
+         <select name="material" id="">
+            <option value="" disabled selected hidden>Select Material</option>
+            <option value="Solid">Solid</option>
+            <option value="Stranded">Stranded</option>
+         </select><br>
+         <input type="number" name="price" id="" placeholder="Price"><br>
+         <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="laptop">
+         <h3>Enter Laptop details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" id="ram-storage" placeholder="RAM/Storage"><br>
+         <input type="text" name="screen-size" placeholder="Screen size" id=""><br>
+         <input type="text" name="processor" placeholder="Processor" id=""><br>
+         <input type="text" name="resolution" placeholder="Resolution"><br>
+         <input type="text" name="operating-system" placeholder="Operating System"><br>
+         <input type="number" name="price" id="" placeholder="Price"><br>
+         <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="mobile">
+         <h3>Enter Mobile Phone details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="processor" placeholder="Processor" id=""><br>
+         <input type="text" name="camera" placeholder="Camera" id=""><br>
+         <input type="text" id="ram-storage" placeholder="RAM/Storage"><br>
+         <input type="text" name="screen-size" placeholder="Screen size" id=""><br>
+         <input type="text" name="resolution" placeholder="Resolution"><br>
+         <input type="number" name="price" id="" placeholder="Price"><br>
+         <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="headphones">
+         <h3>Enter Headphones details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="driver" placeholder="Driver" id=""><br>
+         <input type="text" name="type" placeholder="Type" id=""><br>
+         <input type="text" name="sensitivity" placeholder="Sensitivity" id=""><br>
+         <input type="text" name="impedance" placeholder="Impedance" id=""><br>
+         <input type="text" name="frequency" placeholder="Frequency" id=""><br>
+         <input type="number" name="price" id="" placeholder="Price"><br>
+         <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="cameras">
+         <h3>Enter camera details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="type" placeholder="Type" id=""><br>
+         <input type="text" name="performance" placeholder="Performance" id=""><br>
+         <input type="text" name="storage" placeholder="Storage" id=""><br>
+         <input type="text" name="video" placeholder="Video" id=""><br>
+         <input type="number" name="price" id="" placeholder="Price"><br>
+         <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+      <form action="/auth/addProduct" id="televisions">
+         <h3>Enter TV details:</h3>
+         <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
+         <input type="text" name="display-type" placeholder="Display Type" id=""><br>
+         <input type="text" name="screen-size" placeholder="Screen Size" id=""><br>
+         <input type="text" name="resolution" placeholder="Screen Resolution"><br>
+         <input type="number" name="refresh-rate" placeholder="Refresh Rate" id=""><br>
+         <input type="number" name="price" id="" placeholder="Price"><br>
+         <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
+         <button type="submit">Add Product</button><br>
+      </form>
+   </main>
+   
 </body>
 </html>

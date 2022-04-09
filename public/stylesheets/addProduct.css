@@ -1,0 +1,56 @@
+@font-face {
+   font-family: Montserrat;
+   src: url(C:\xampp\htdocs\SemIVProjectWeb\fonts\Montserrat-VariableFont_wght.ttf);
+}
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Montserrat;
+   color: white;
+   font-size: 24px;
+}
+
+body {
+   background: #171624;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+main {
+   padding: 50px;
+   background: white;
+   border-radius: 30px;
+   width: fit-content;
+}
+form > * {
+   color: black;
+   display: block;
+   width: 100%;
+   margin: 0;
+}
+form > * > * {
+   color: black;
+}
+form[action = "/auth/addProduct"] {
+   display: none;
+}
+select {
+   width: 400px;
+   text-align: center;
+   border-radius: 5px;
+}
+form [action = "/auth/FetchTable"] {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+form[action = "/auth/addProduct"] button {
+   display: block;
+   width: 100%;
+   border: none;
+   padding: 20 0;
+   background: rgb(0, 122, 255);
+   color: white;
+   font-weight: 600;
+}
