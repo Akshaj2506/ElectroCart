@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+var selectedProduct = "";
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -76,13 +77,16 @@ exports.login = (req, res) => {
             } else {
                return res.render('index', {
                   login_message: 'Password is incorrect'
-               })
-            }
-         }
-      }
-   })
+               });
+            };
+         };
+      };
+   });
+}
+exports.fetchTable = (req, res) => {
+   console.log(req.body);
+   selectedProduct = req.body.tableName;
 }
 exports.addProduct = (req, res) => {
    console.log(req.body);
-   
 }

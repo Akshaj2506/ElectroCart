@@ -7,10 +7,11 @@
    <title>Add Product</title>
 </head>
 <body>
+   <script src="/javascripts/script.js"></script>
    <main>
-      <form action="/auth/FetchTable">
+      <form action="/auth/fetchTable" method="POST" id="select-product-form">
          <h3>Which product is to be added?</h3>
-         <select name="fetchTable" id="">
+         <select name="tableName" id="get-product">
             <option value="" disabled selected hidden>Select Product</option>
             <option value="motherboard">Motherboard</option>
             <option value="cpu">CPU</option>
@@ -23,9 +24,9 @@
             <option value="cameras">Camera</option>
             <option value="televisions">Television</option>
          </select>
-         <button type="submit">Submit</button>
+         <button type="submit" onclick="showTable()">Submit</button>
       </form>
-      <form action="/auth/addProduct" id="motherboard">
+      <form action="/auth/addProduct" method="POST" id="motherboard">
          <h3>Enter Motherboard details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="cpu-support" placeholder="CPU Support" id=""><br>
@@ -36,7 +37,7 @@
          <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
          <button type="submit">Add Product</button>
       </form>
-      <form action="/auth/addProduct" id="cpu">
+      <form action="/auth/addProduct" method="POST" id="cpu">
          <h3>Enter CPU details: </h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="number" name="core-number" placeholder="No. of cores" id=""><br>
@@ -47,7 +48,7 @@
          <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
          <button type="submit">Add Product</button>
       </form>
-      <form action="/auth/addProduct" id="storage">
+      <form action="/auth/addProduct" method="POST" id="storage">
          <h3>Enter Storage device details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="form-factor" placeholder="Form Factor" id=""><br>
@@ -58,7 +59,7 @@
          <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="ram">
+      <form action="/auth/addProduct" method="POST" id="ram">
          <h3>Enter RAM details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="frequency" placeholder="Frequency" id=""><br>
@@ -73,7 +74,7 @@
          <input type="text" name="pic-url" placeholder="Picture URL" id=""><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="cable">
+      <form action="/auth/addProduct" method="POST" id="cable">
          <h3>Enter Cable Details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="cable-category" placeholder="Category" id=""><br>
@@ -92,7 +93,7 @@
          <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="laptop">
+      <form action="/auth/addProduct" method="POST" id="laptop">
          <h3>Enter Laptop details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" id="ram-storage" placeholder="RAM/Storage"><br>
@@ -104,7 +105,7 @@
          <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="mobile">
+      <form action="/auth/addProduct" method="POST" id="mobile">
          <h3>Enter Mobile Phone details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="processor" placeholder="Processor" id=""><br>
@@ -116,7 +117,7 @@
          <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="headphones">
+      <form action="/auth/addProduct" method="POST" id="headphones">
          <h3>Enter Headphones details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="driver" placeholder="Driver" id=""><br>
@@ -128,7 +129,7 @@
          <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="cameras">
+      <form action="/auth/addProduct" method="POST" id="cameras">
          <h3>Enter camera details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="type" placeholder="Type" id=""><br>
@@ -139,7 +140,7 @@
          <input type="text" name="pic-url" id="" placeholder="Picture URL"><br>
          <button type="submit">Add Product</button><br>
       </form>
-      <form action="/auth/addProduct" id="televisions">
+      <form action="/auth/addProduct" method="POST" id="televisions">
          <h3>Enter TV details:</h3>
          <input type="text" name="device-name" placeholder="Name of Product" id=""><br>
          <input type="text" name="display-type" placeholder="Display Type" id=""><br>
