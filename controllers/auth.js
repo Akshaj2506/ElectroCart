@@ -89,4 +89,42 @@ exports.fetchTable = (req, res) => {
 }
 exports.addProduct = (req, res) => {
    console.log(req.body);
+   const productName = req.body.deviceName;
+   const price = "₹"+req.body.price;
+   const picUrl = req.body.picUrl;
+   if (selectedProduct == "cable") {
+      const category = req.body.cableCategory;
+      const shieldInfo = req.body.shieldInfo;
+      const length = req.body.length + "cm";
+      const material = req.body.material;
+      console.log(price);
+      console.log(length);
+   }
+   if (selectedProduct == "cameras") {
+
+   }
+   if (selectedProduct == "cpu") {
+
+   }
+   if (selectedProduct == "headphones") {
+
+   }
+   if (selectedProduct == "laptop") {
+
+   }
+   if (selectedProduct == "mobile") {
+
+   }
+   if (selectedProduct == "motherboard") {
+
+   }
+   if (selectedProduct == "ram") {
+
+   }
+   if (selectedProduct == "storage") {
+
+   }
+   if (selectedProduct == "televisions") {
+
+   }
 }

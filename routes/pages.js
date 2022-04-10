@@ -10,5 +10,8 @@ router.get('/products',(req, res) => {
 router.get('/add-product', (req, res) => {
    res.render('addProduct');
 })
+router.get('/contact',(req,res) => {
+   res.render('contactus');
+})
 
 module.exports = router;
