@@ -91,17 +91,64 @@ exports.addProduct = (req, res) => {
    console.log(req.body);
    const productName = req.body.deviceName;
    const price = "₹"+req.body.price;
-   const picUrl = req.body.picUrl;
+   const picUrl = "/images/"+req.body.picUrl;
    if (selectedProduct == "cable") {
       const category = req.body.cableCategory;
       const shieldInfo = req.body.shieldInfo;
       const length = req.body.length + "cm";
       const material = req.body.material;
-      console.log(price);
-      console.log(length);
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            category: category,
+            shield_info: shieldInfo,
+            length: length,
+            material: material,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "cameras") {
-
+      const type = req.body.type;
+      const resolution = req.body.resolution + "MP";
+      const storage = req.body.storage;
+      const video = req.body.video;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            type: type,
+            price: price,
+            resolution: resolution,
+            storage: storage,
+            video: video,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "cpu") {
 
