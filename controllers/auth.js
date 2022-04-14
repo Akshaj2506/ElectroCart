@@ -243,10 +243,64 @@ exports.addProduct = (req, res) => {
       });
    }
    if (selectedProduct == "mobile") {
-
+      const processor = req.body.processor;
+      const camera = req.body.camera;
+      const ramstorage = req.body.ramStorage;
+      const screensize = req.body.screenSize;
+      const resolution = req.body.resolution;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            processor: processor,
+            camera: camera,
+            ram_storage: ramstorage,
+            screen_size: screensize,
+            resolution: resolution,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "motherboard") {
-
+      const cpuSupport = req.body.cpuSupport;
+      const socket = req.body.socket;
+      const storage = req.body.storage;
+      const network = req.body.network;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            cpu_support: cpuSupport,
+            socket: socket,
+            storage: storage,
+            network: network,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "ram") {
 
