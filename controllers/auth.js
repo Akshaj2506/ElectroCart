@@ -151,13 +151,96 @@ exports.addProduct = (req, res) => {
       });
    }
    if (selectedProduct == "cpu") {
+      const cores = req.body.coreNumber;
+      const threads = req.body.threadsNumber;
+      const clockSpeed = req.body.clockSpeed +"GHz";
+      const cacheAmount = req.body.cacheAmount;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            core_num: cores,
+            thread_num: threads,
+            clock_speed: clockSpeed,
+            cache_amount: cacheAmount,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
 
    }
    if (selectedProduct == "headphones") {
-
+      const driver = req.body.driver;
+      const type = req.body.type;
+      const sensitivity = req.body.sensitivity+" dB";
+      const impedance = req.body.impedance+" Ohms";
+      const frequency = req.body.frequency;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            driver: driver,
+            type: type,
+            sensitivity: sensitivity,
+            impedance: impedance,
+            frequency: frequency,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "laptop") {
-
+      const ramstorage = req.body.ramStorage;
+      const screenSize = req.body.screenSize;
+      const processor = req.body.processor;
+      const resolution = req.body.resolution;
+      const os = req.body.operatingSystem;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            ram_storage: ramstorage,
+            screen_size: screenSize,
+            processor: processor,
+            resolution: resolution,
+            operating_system: os,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "mobile") {
 
