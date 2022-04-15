@@ -359,9 +359,35 @@ exports.addProduct = (req, res) => {
             };
          };
       });
-
    }
    if (selectedProduct == "televisions") {
+      const displaytype = req.body.displayType;
+      const screensize = req.body.screenSize;
+      const resolution = req.body.resolution;
+      const refreshrate = req.body.refreshRate + " Hz";
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            display_type: displaytype,
+            screen_size: screensize,
+            resolution: resolution,
+            refresh_rate: refreshrate,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
 
    }
 }
