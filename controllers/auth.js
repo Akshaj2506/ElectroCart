@@ -303,9 +303,62 @@ exports.addProduct = (req, res) => {
       });
    }
    if (selectedProduct == "ram") {
-
+      const frequency = req.body.frequency;
+      const voltage = req.body.voltage;
+      const ramAmount = req.body.ramAmount;
+      const bits = req.body.bitCategory;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            frequency: frequency,
+            voltage: voltage,
+            ram_amount: ramAmount,
+            bits: bits,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
    }
    if (selectedProduct == "storage") {
+      const formfactor = req.body.formFactor;
+      const dimensions = req.body.dimensions;
+      const capacity = req.body.capacity;
+      const speed = req.body.speed;
+      db.query(`SELECT name from ${selectedProduct} where name = '${productName}'`, async(error, results) => {
+         if(error) {
+            console.log(error);
+         }
+         if (results.length > 0) {
+            console.log("Product already exists");
+         }
+         db.query(`INSERT INTO ${selectedProduct} SET ?`, {
+            name: productName,
+            form_factor: formfactor,
+            dimensions: dimensions,
+            capacity: capacity,
+            speed: speed,
+            price: price,
+            pic_url: picUrl
+         }), (error, results) => {
+            if (error) {
+               console.log(error);
+            } else {
+               console.log("Product successfully added!");
+            };
+         };
+      });
 
    }
    if (selectedProduct == "televisions") {
