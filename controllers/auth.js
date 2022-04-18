@@ -388,6 +388,5 @@ exports.addProduct = (req, res) => {
             };
          };
       });
-
    }
 }
