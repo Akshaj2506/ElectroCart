@@ -1,7 +1,7 @@
 const fs = require('fs');
 const mysql = require("mysql");
 const dotenv = require("dotenv");
-// const productName = require("./script");
+const productName = require("./script");
 dotenv.config( {path: './.env'});
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -33,13 +33,13 @@ function getCable() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.cable.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -56,13 +56,13 @@ function getCameras() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.cameras.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -79,13 +79,13 @@ function getCpu() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.cpu.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -102,13 +102,13 @@ function getHeadphones() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.headphones.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -125,13 +125,13 @@ function getLaptop() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.laptop.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -148,13 +148,13 @@ function getMobile() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.mobile.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -171,13 +171,13 @@ function getMotherboard() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.motherboard.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -194,13 +194,13 @@ function getRam() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.ram.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -217,13 +217,13 @@ function getStorage() {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.storage.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }
@@ -234,20 +234,19 @@ function getStorage() {
       }
    })
 }
-getStorage();
 function getTelevisions() {
    db.query(`SELECT * FROM televisions`, async(error, results) => {
       if (error) {
          console.log(error);
       }
       if (results.length > 0) {
-         fs.readFile('data.json','utf-8', (err , data) => {
+         fs.readFile('../data.json','utf-8', (err , data) => {
             if (err) {
                console.log(err);
             } else {
                database.televisions.push(results);
                json = JSON.stringify(database);
-               fs.writeFile('data.json', json, 'utf-8', (err, data) => {
+               fs.writeFile('../data.json', json, 'utf-8', (err, data) => {
                   if (err) {
                      console.log("Error detected");
                   }

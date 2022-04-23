@@ -3,6 +3,7 @@ const mysql = require('mysql');
 const path = require('path');
 const dotenv = require('dotenv');
 const app = express();
+const ejs = require('ejs');
 
 dotenv.config( {path: './.env'});
 app.use(express.urlencoded( { extended: false }));
@@ -18,6 +19,7 @@ const db = mysql.createConnection({
 const publicDirectory = path.join(__dirname,'./public');
 app.use(express.static(publicDirectory));
 
+app.set('view engine', 'ejs');
 app.set('view engine','hbs');
 
 db.connect( (error) => {

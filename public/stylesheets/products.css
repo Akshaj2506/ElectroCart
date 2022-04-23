@@ -132,6 +132,9 @@ main {
 .el-wrapper:hover .add-to-cart {
    left: 50%;
 }
+.el-wrapper .img {
+   height: 245px;
+}
 .el-wrapper:hover .img {
    -webkit-filter: blur(7px);
    -o-filter: blur(7px);
@@ -212,7 +215,8 @@ main {
    display: block;
 }
 .info-inner .product-name {
-   font-size: 18px;
+   margin-top: 20px;
+   font-size: 16px;
    color: #2083e1;
 }
 .info-inner .product-brand {

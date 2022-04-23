@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/stylesheets/products.css">
+   <link rel="stylesheet" href="">
+   <title>Buy Product at ElectroCart</title>
+</head>
+<body>
+   <header>
+      <nav>
+         <a href="#"><img src="/images/logo_consumer.png" alt=""></a>
+         <div class="nav-links">
+            <ul>
+               <li><a href="">Home</a></li>
+               <li><a href="">Products</a></li>
+               <li><a href="">Contact Us</a></li>
+               <li><a href="">Cart</a></li>
+               <li><a href="" id="account"> <img src="/images/account.png" alt=""> Hi Akshaj</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+   <main>
+      <div class="main-container">
+         <%
+         if (sendData.length > 0) {
+            sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.category %></span>
+                              </div>
+                              <div class="launch-date">Shield Info: <span class="date"><%= sendData.shield_info %></span><br>
+                                 Length: <span class="date"><%= sendData.length %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else
+            {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+            %>
+      </div>
+   </main>
+</body>
+</html>
