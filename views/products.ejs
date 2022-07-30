@@ -5,19 +5,19 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/stylesheets/products.css">
    <link rel="stylesheet" href="">
-   <title>Buy Product at ElectroCart</title>
+   <title>Buy <%= product %> at ElectroCart</title>
 </head>
 <body>
+   <script src="/javascripts/store.js" async></script>
    <header>
       <nav>
-         <a href="#"><img src="/images/logo_consumer.png" alt=""></a>
+         <a href="/home"><img src="/images/logo_consumer.png" alt=""></a>
          <div class="nav-links">
             <ul>
-               <li><a href="">Home</a></li>
+               <li><a href="/home">Home</a></li>
                <li><a href="">Products</a></li>
-               <li><a href="">Contact Us</a></li>
-               <li><a href="">Cart</a></li>
-               <li><a href="" id="account"> <img src="/images/account.png" alt=""> Hi Akshaj</a></li>
+               <li><a href="/contact">Contact Us</a></li>
+               <li><a href="" id="account"> <img src="/images/account.png" alt=""> Hi User</a></li>
             </ul>
          </div>
       </nav>
@@ -25,8 +25,9 @@
    <main>
       <div class="main-container">
          <%
-         if (sendData.length > 0) {
-            sendData.forEach(function(sendData){
+         if (product == 'cables') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
          %>
             <div class="container page-wrapper">
                <div class="page-inner">
@@ -40,7 +41,8 @@
                                  <span class="product-brand"><%= sendData.category %></span>
                               </div>
                               <div class="launch-date">Shield Info: <span class="date"><%= sendData.shield_info %></span><br>
-                                 Length: <span class="date"><%= sendData.length %></span>
+                                 Length: <span class="date"><%= sendData.length %></span><br>
+                                 Material: <span class="date"><%= sendData.material %></span>
                               </div>
                            </div>
                         </div>
@@ -62,14 +64,484 @@
             <%         
             })
          }
-            else
-            {
+            else {
             %>
                <h2>NO Data FOUND</h2>
             <%   
             }
+         }
+            %>
+         <%
+         if (product == 'cameras') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.type %></span>
+                              </div>
+                              <div class="launch-date">Resolution: <span class="date"><%= sendData.resolution %></span><br>
+                                 Storage: <span class="date"><%= sendData.storage %></span><br>
+                                 Video: <span class="date"><%= sendData.video %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'CPUs') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.core_num %> cores</span>
+                              </div>
+                              <div class="launch-date">Number of Threads: <span class="date"><%= sendData.thread_num %></span><br>
+                                 Clock Speed: <span class="date"><%= sendData.clock_speed %></span><br>
+                                 Amount of Cache: <span class="date"><%= sendData.cache_amount %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'headphones') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.type %></span>
+                              </div>
+                              <div class="launch-date">Driver: <span class="date"><%= sendData.driver %></span><br>
+                                 Sensitivity: <span class="date"><%= sendData.sensitivity %></span><br>
+                                 Impedance: <span class="date"><%= sendData.impedance %></span><br>
+                                 Frequency: <span class="date"><%= sendData.frequency %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'laptop') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.ram_storage %></span>
+                              </div>
+                              <div class="launch-date">Screen Size: <span class="date"><%= sendData.screen_size %></span><br>
+                                 Processor: <span class="date"><%= sendData.processor %></span><br>
+                                 Resolution: <span class="date"><%= sendData.resolution %></span><br>
+                                 Operating System: <span class="date"><%= sendData.operating_system %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'mobile') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.processor %></span>
+                              </div>
+                              <div class="launch-date">Camera: <span class="date"><%= sendData.camera %></span><br>
+                                 Ram/Storage: <span class="date"><%= sendData.ram_storage %></span><br>
+                                 Screen Size: <span class="date"><%= sendData.screen_size %></span><br>
+                                 Resolution: <span class="date"><%= sendData.resolution %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'motherboard') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.network %></span>
+                              </div>
+                              <div class="launch-date">
+                                 CPU Support: <span class="date"><%= sendData.cpu_support %></span><br>
+                                 Socket: <span class="date"><%= sendData.socket %></span><br>
+                                 Storage: <span class="date"><%= sendData.storage %></span><br>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'RAMs') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.ram_amount %></span>
+                              </div>
+                              <div class="launch-date">
+                                 Frequency: <span class="date"><%= sendData.frequency%></span><br>
+                                 Voltage: <span class="date"><%= sendData.bits %></span><br>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'storage') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.form_factor %></span>
+                              </div>
+                              <div class="launch-date">
+                                 Dimensions: <span class="date"><%= sendData.dimensions %></span><br>
+                                 Capacity: <span class="date"><%= sendData.capacity %></span><br>
+                                 Speed: <span class="date"><%= sendData.speed %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
+            %>
+         <%
+         if (product == 'televisions') {
+            if (sendData.length > 0) {
+               sendData.forEach(function(sendData){
+         %>
+            <div class="container page-wrapper">
+               <div class="page-inner">
+                  <div class="row">
+                     <div class="el-wrapper">
+                        <div class="box-up">
+                           <img class="img" src="<%= sendData.pic_url %>" alt="">
+                           <div class="img-info">
+                              <div class="info-inner">
+                                 <span class="product-name"><%= sendData.name %></span>
+                                 <span class="product-brand"><%= sendData.display_type %></span>
+                              </div>
+                              <div class="launch-date">
+                                 Screen Size: <span class="date"><%= sendData.screen_size %></span><br>
+                                 Resolution: <span class="date"><%= sendData.resolution %></span><br>
+                                 Refresh Rate: <span class="date"><%= sendData.refresh_rate %></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="box-down">
+                           <div class="h-bg">
+                              <div class="h-bg-inner"></div>
+                           </div>
+                           <a href="" class="cart">
+                              <span class="price"><%= sendData.price %></span>
+                              <span class="add-to-cart">
+                                 <span class="txt">Add in cart</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%         
+            })
+         }
+            else {
+            %>
+               <h2>NO Data FOUND</h2>
+            <%   
+            }
+         }
             %>
       </div>
    </main>
+   <div class="cart-container">
+      <div class="cart-items">
+      </div>
+      <div class="cart-total">
+         <!-- <strong class="cart-total-title">Total</strong>
+         <span class="cart-total-price">₹0</span>
+      </div>
+      <button class="purchase-button">Proceed to Checkout</button> -->
+   </div>
+   <section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">products</a>
+            <a href="#">review</a>
+            <a href="#">contact</a>
+        </div>
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#">my account</a>
+            <a href="#">my order</a>
+            <a href="#">my favorite</a>
+        </div>
+        <div class="box">
+            <h3>locations</h3>
+            <a href="#">india</a>
+            <a href="#">USA</a>
+            <a href="#">japan</a>
+            <a href="#">france</a>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">example@gmail.com</a>
+            <a href="#">mumbai, india - 400104</a>
+            <img src="images/payment.png" alt="">
+        </div>
+      </div>
+   </section>
 </body>
 </html>

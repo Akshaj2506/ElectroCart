@@ -71,7 +71,7 @@ exports.login = (req, res) => {
             const hashedPassword = result[0].password;
 
             if (await bcrypt.compare(password, hashedPassword)) {
-               return res.render('products', {
+               return res.render('home.hbs', {
                   accountName: `${result[0].first_name}`
                })
             } else {
