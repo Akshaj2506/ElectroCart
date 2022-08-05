@@ -3,7 +3,6 @@ if (document.readyState == 'loading') {
 } else {
    ready()
 }
-
 function ready() {
    var removeCartItemButtons = document.getElementsByClassName('remove-button');
    console.log(removeCartItemButtons);
@@ -37,8 +36,7 @@ function quantityChanged(event) {
    }
    updateCartTotal()
 }
-function addToCartClicked(event) {
-   var button = event.target;
+function addToCartClicked() {
    var shopItem = button.parentElement.parentElement;
    var title = shopItem.getElementsByClassName('product-name')[0].innerText;
    var price = shopItem.getElementsByClassName('price')[0].innerText;
